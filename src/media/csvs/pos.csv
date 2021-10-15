@@ -1,0 +1,9 @@
+Transaction id,Product,Quantity,Customer,Date
+E100,Tv,1,Test Customer,2021-03-12
+E100,Laptop,3,Test Customer,2021-03-12
+E200,Tv,1,Test Customer,2021-03-13
+E300,Smartphone,2,New Customer,2021-03-14
+E300,Laptop,5,New Customer,2021-03-14
+E300,Tv,1,Test Customer,2021-03-14
+E400,Tv,2,ABC,2021-03-15
+E500,Smartphone,4,ABC,2021-03-16
