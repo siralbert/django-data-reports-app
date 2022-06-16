@@ -39,7 +39,7 @@ class UploadTemplateView(LoginRequiredMixin, TemplateView):
 
 @login_required
 def csv_upload_view(request):
-    print("file is being send")
+    print("file is being sent")
 
     if request.method == 'POST':
         csv_file_name = request.FILES.get('file').name
