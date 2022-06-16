@@ -7,3 +7,6 @@ db.sqlite3
 
 # Shell scripts
 *.sh
+
+# jupiter notebooks
+*.ipynb
