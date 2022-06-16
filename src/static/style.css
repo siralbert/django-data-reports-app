@@ -15,7 +15,7 @@
 }
 
 .avatar-sm{
-    height:20px;
+    height:25px;
     width:25px;
     border-radius: 50%;
 }
@@ -75,10 +75,17 @@ nav a:hover, a:active{
 
 /* Search button */
 .btn-primary {
-  color: #fff;
+  color: #000fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
 }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;   !important
+    background-color: #0d6efd;   !important
+    border-color: #0d6efd;   !important
+}
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -107,4 +114,10 @@ nav a:hover, a:active{
     transition-delay: 0s, 0s, 0s, 0s;
   color: white;
   background-color: rgb(74, 74, 74);
+}
+
+/* Home Search Form */
+
+.form-group{
+   margin-bottom: 1rem;
 }

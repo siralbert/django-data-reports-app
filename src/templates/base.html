@@ -23,14 +23,21 @@
     <link rel="stylesheet" href="{% static 'reset.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     {% block scripts %}
+
+    <!-- Add additional scripts for child page -->
+
     {% endblock scripts %}
 
-    <title>Report app | {% block title %}{% endblock title %}</title>
+                          <!-- Main title for child page -->
+    <title>Report app | {% block title %}       {% endblock title %}</title>
   </head>
   <body>
     {% include 'navbar.html' %}
     <div class="container mt-3 mb-3">
         {% block content %}
+
+	<!-- Main content for child pages -->
+
         {% endblock content %}
     </div>
 
