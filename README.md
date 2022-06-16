@@ -18,27 +18,31 @@ You can run the django-sales-reports-app locally without setting up Vagrant or D
 With [PIP](https://github.com/pypa/pip) and [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 installed, run:
 
-    mkvirtualenv django-data-reports-app
+    virtualenv django-data-reports-app
+    cd django-data-reports-app
+    source bin/activate
     python --version
 
 Confirm that this is showing a compatible version of Python 3.x. If not, and you have multiple versions of Python installed on your system, you may need to specify the appropriate version when creating the virtualenv:
 
     deactivate
-    rmvirtualenv django-data-reports-app
-    mkvirtualenv django-data-reports-app --python=python3.9
+    cd ..
+    rm -rf django-data-reports-app
+    virtualenv django-data-reports-app --python=python3.9
+    cd django-data-reports-app
+    source bin/activate
     python --version
 
 Now we're ready to set up the django-data-reports project itself:
 
     cd ~/dev [or your preferred dev directory]
-    git clone https://github.com/django-data-reports-app/django-data-reports-app.git
+    git clone git@github.com:siralbert/django-data-reports-app.git
     cd django-data-reports-app
-    pip install -r requirements/base.txt
+    pip install -r requirements.txt
 
-To set up your database and load initial data, run the following commands:
+To run the django-data-reports project, run the following command after all the dependencies are installed:
 
-    ./manage.py migrate
-    ./manage.py load_initial_data
     ./manage.py runserver
 
-Log into the admin with the credentials `admin / changeme123`.
+The server will run at http://127.0.0.1:8000/
+Log into the site as admin with the credentials `admin / changeme123`.
