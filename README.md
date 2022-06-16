@@ -41,4 +41,4 @@ To set up your database and load initial data, run the following commands:
     ./manage.py load_initial_data
     ./manage.py runserver
 
-Log into the admin with the credentials `admin / changeme`.
+Log into the admin with the credentials `admin / changeme123`.
