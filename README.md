@@ -28,18 +28,12 @@ Confirm that this is showing a compatible version of Python 3.x. If not, and you
     mkvirtualenv django-data-reports-app --python=python3.9
     python --version
 
-Now we're ready to set up the bakery demo project itself:
+Now we're ready to set up the django-data-reports project itself:
 
     cd ~/dev [or your preferred dev directory]
     git clone https://github.com/django-data-reports-app/django-data-reports-app.git
     cd django-data-reports-app
     pip install -r requirements/base.txt
-
-Next, we'll set up our local environment variables. We use [django-dotenv]
-to help with this. It reads environment variables located in a file name `.env` in the top level directory of the project. The only variable we need to start is `DJANGO_SETTINGS_MODULE`:
-
-    $ cp django-data-reports-app/settings/local.py.example django-data-reports-app/settings/local.py
-    $ echo "DJANGO_SETTINGS_MODULE=django-data-reports-app.settings.local" > .env
 
 To set up your database and load initial data, run the following commands:
 
