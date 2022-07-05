@@ -71,10 +71,16 @@ def home_view(request):
             chart = get_chart(
                 chart_type, sales_df, results_by)
 
-            sales_df = sales_df.to_html()
-            positions_df = positions_df.to_html()
-            merged_df = merged_df.to_html()
-            df = df.to_html()
+
+            sales_df = sales_df.style.hide(axis='index')
+            positions_df = positions_df.style.hide(axis='index')
+            merged_df = merged_df.style.hide(axis='index')
+            df = df.style.hide(axis='index')
+
+            sales_df = sales_df.to_html(index=False)
+            positions_df = positions_df.to_html(index=False)
+            merged_df = merged_df.to_html(index=False)
+            df = df.to_html(index=False)
 
         else:
             no_data = "There is no data available for this date range"
@@ -91,22 +97,23 @@ def home_view(request):
     }
     return render(request, 'sales/home.html', context)
 
-
+# Lists the sales records according to transaction id
 class SaleListView(LoginRequiredMixin, ListView):
     model = Sale
     template_name = 'sales/main.html'
+#	context_object_name = 'qs'
 
-
+# Provides detailed information for the transaction (Product, Quantity, Price, Customer)
 class SaleDetailView(LoginRequiredMixin, DetailView):
     model = Sale
     template_name = 'sales/detail.html'
 
 
-def sale_list_view(request):
-    qs = Sale.objects.all()
-    return render(request, 'sales/main.html', {'object_list': qs})
+#def sale_list_view(request):
+#    qs = Sale.objects.all()
+#    return render(request, 'sales/main.html', {'object_list': qs})
 
 
-def sale_detail_view(request, pk):
-    obj = Sale.objects.get(pk=pk)
-    return render(request, 'sales/detail.html', {'object': obj})
+#def sale_detail_view(request, pk):
+#    obj = Sale.objects.get(pk=pk)
+#    return render(request, 'sales/detail.html', {'object': obj})
